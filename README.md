@@ -1,5 +1,8 @@
 # vagrant-kubernetes
 
+注意: このブランチは、コンテナランタイムとして、Dockerの代わりにContainerd をインストールするものです。そのため、dockerコマンドを利用することはできません。
+
+
 この Vagrant と Ansible のコードは、学習用のマルチノードの Kubernetes 環境を自動構築するためのものです。
 
 vagrant コマンドからクラスタを起動することで、パソコン上に仮想サーバー３台が起動して、Kuberetesの環境を
