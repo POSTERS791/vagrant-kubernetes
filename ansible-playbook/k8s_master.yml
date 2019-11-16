@@ -131,10 +131,9 @@
         group: vagrant
       when: k8s_minor_ver|int > 11 and k8s_minor_ver|int < 16
 
-
     - name: download Manifest of Flannel for k8s ver >= 16
       get_url:
-        url: https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+        url: https://raw.githubusercontent.com/takara9/vagrant-kubernetes/1.16c/kube-flannel.yml
         dest: /home/vagrant/
         mode: '0644'
         owner: vagrant
