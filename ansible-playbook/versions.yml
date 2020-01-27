@@ -14,7 +14,7 @@ container_engine: containerd
 #k8s_version: =1.14.3-00
 #k8s_version: =1.15.0-00
 #k8s_version: =1.16.0-00
-#k8s_version: =1.16.3-00
+#k8s_version: =1.16.6-00
 k8s_version: =1.17.1-00
 
 # Docker Package Version

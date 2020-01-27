@@ -24,6 +24,7 @@
       - software-properties-common
       - nfs-common
       - libseccomp2
+      - ntp
     when: container_engine == "containerd"
 
   - name: Add the br_netfilter module
@@ -114,19 +115,17 @@
       enabled: yes
     when: container_engine == "containerd"
 
-
   ## GlusterFS のインストール
   #
-  - name: Add GlusterFS Repository
-    apt_repository:
-      repo: ppa:gluster/glusterfs-7
-
-  - name: Install GlusterFS client
-    apt:
-      name: glusterfs-client
-      state: present
-      update_cache: yes
-
+  #- name: Add GlusterFS Repository
+  #  apt_repository:
+  #    repo: ppa:gluster/glusterfs-7
+  #
+  #- name: Install GlusterFS client
+  #  apt:
+  #    name: glusterfs-client
+  #    state: present
+  #    update_cache: yes
 
   ## Kubernetes のインストール
   #

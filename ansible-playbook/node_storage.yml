@@ -1,0 +1,27 @@
+- hosts: nodes
+  become: yes
+  gather_facts: True
+
+  tasks:
+    - name: include k8s version
+      include_vars: /vagrant/ansible-playbook/versions.yml
+
+    - name: mkfs /dev/sdc
+      filesystem:
+        fstype: ext4
+        dev: /dev/sdc
+
+    - name: Creates directory
+      file:
+        path: /ceph_data
+        state: directory
+        owner: root
+        group: root
+        mode: 0775
+
+    - name: mount /ceph_data
+      mount:
+        path: /ceph_data
+        src: /dev/sdc
+        fstype: ext4
+        state: mounted
